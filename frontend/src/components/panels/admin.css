@@ -1,0 +1,227 @@
+/* 🌿 Panel principal */
+.eco-admin {
+  margin: 0;
+  padding: 2rem 3rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 12px;
+  color: rgb(255, 255, 255);
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  overflow-y: auto; /* ✅ permite scroll completo */
+}
+
+/* 🌱 Título */
+.eco-admin h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #1c9220;
+  font-weight: bold;
+}
+
+/* 🧭 Navegación */
+.admin-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.admin-nav button {
+  background-color: #81c784;
+  border: none;
+  padding: 0.8rem 1.4rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.admin-nav button.active,
+.admin-nav button:hover {
+  background-color: #4caf50;
+}
+
+/* 📦 Contenido */
+.admin-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+/* 👥 Usuarios */
+.usuarios-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #a5d6a7;
+}
+
+.usuario-card {
+  background-color: rgba(255,255,255,0.08);
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.usuario-card:hover {
+  background-color: rgba(255,255,255,0.15);
+}
+
+.usuario-card input,
+.usuario-card select {
+  flex: 1 1 200px;
+  min-width: 180px;
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: none;
+  background-color: rgba(255,255,255,0.1);
+  color: white;
+}
+
+.usuario-card .acciones {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.usuario-card button {
+  background-color: #66bb6a;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.usuario-card button:hover {
+  background-color: #43a047;
+}
+
+.usuario-card button.danger {
+  background-color: #e53935;
+}
+
+.usuario-card button.danger:hover {
+  background-color: #c62828;
+}
+
+/* 🧠 Preguntas */
+.preguntas-section {
+  background-color: rgba(0,0,0,0.4);
+  padding: 2rem;
+  border-radius: 12px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow-y: auto;
+  max-height: none;
+}
+
+.preguntas-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #a5d6a7;
+}
+
+/* 📱 Responsivo */
+@media (max-width: 768px) {
+  .eco-admin {
+    padding: 1rem;
+  }
+
+  .admin-nav button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .usuario-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .usuario-card input,
+  .usuario-card select,
+  .usuario-card button {
+    width: 100%;
+  }
+
+  .admin-content {
+    grid-template-columns: 1fr;
+  }
+
+  .preguntas-section {
+    padding: 1rem;
+    width: 95%;
+    max-width: none;
+  }
+}
+
+/* 🔙 Botones */
+.cerrar-sesion-btn {
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.cerrar-sesion-btn:hover {
+  background-color: #d32f2f;
+}
+
+.volver-btn {
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.volver-btn:hover {
+  background-color: #ddd;
+}
+@media (max-width: 768px) {
+  .preguntas-section {
+    width: 95%;
+    max-width: none;
+    padding: 1rem;
+  }
+
+  .eco-admin {
+    padding: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .eco-admin h2 {
+    font-size: 1.5rem;
+  }
+  .admin-nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .preguntas-section {
+    padding: 0.75rem;
+  }
+}

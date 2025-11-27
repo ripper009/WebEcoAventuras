@@ -1,0 +1,119 @@
+.podium-panel {
+  background: linear-gradient(to bottom, #a5d6a7, #81c784);
+  height: 100vh;
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #2e4d3a;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.podium-panel h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.podium-panel p {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.ranking-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.ranking-item {
+  background-color: #c8e6c9;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.medalla {
+  font-size: 2rem;
+}
+
+.info {
+  flex: 1;
+}
+
+.info strong {
+  font-size: 1.2rem;
+  display: block;
+}
+
+.info p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+}
+
+.insignia {
+  display: inline-block;
+  margin-top: 0.3rem;
+  padding: 0.3rem 0.6rem;
+  background-color: #66bb6a;
+  color: white;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.botones-podio {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.botones-podio button {
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.botones-podio button:hover {
+  background-color: #388e3c;
+}
+
+/* 📱 Responsivo */
+@media (max-width: 600px) {
+  .ranking-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .info {
+    width: 100%;
+  }
+
+  .botones-podio {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 1024px) {
+  .podium-panel {
+    padding: 1.5rem;
+  }
+  .podium-panel h2 {
+    font-size: 1.6rem;
+  }
+  .info strong {
+    font-size: 1.1rem;
+  }
+}
+.podium-panel h2 {
+  font-size: clamp(1.4rem, 4vw, 1.8rem);
+}

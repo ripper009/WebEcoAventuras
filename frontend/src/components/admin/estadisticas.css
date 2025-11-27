@@ -1,0 +1,129 @@
+.eco-estadisticas {
+  background: url("/bosque-fondo.jpg") no-repeat center center;
+  background-size: cover;
+  padding: 2rem;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="text"] {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: none;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 1rem;
+}
+
+.contenido-scroll {
+  overflow-y: auto;
+  flex-grow: 1;
+  padding-right: 1rem;
+}
+
+.usuario-estadisticas {
+  background: rgba(0, 50, 0, 0.6);
+  padding: 1rem;
+  border-radius: 12px;
+  margin-top: 1rem;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+button {
+  background-color: #228B22;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.modal-grafico {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.grafico-contenido {
+  background: #2e8b57;
+  padding: 2rem;
+  border-radius: 16px;
+  color: white;
+  text-align: center;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.grafico-lista {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media screen and (max-width: 768px) {
+  .eco-estadisticas {
+    padding: 1rem;
+  }
+
+  .grafico-contenido {
+    width: 90%;
+  }
+}
+
+
+.grafico-scroll {
+  width: 100%;
+  height: 400px;
+  overflow-y: auto;
+  background: rgba(0, 100, 0, 0.2);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .grafico-scroll {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .eco-estadisticas {
+    padding: 0.5rem;
+  }
+  input[type="text"] {
+    max-width: 100%;
+  }
+  .grafico-contenido {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+  .grafico-scroll {
+    height: 200px;
+  }
+}
+.usuario-estadisticas {
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+}

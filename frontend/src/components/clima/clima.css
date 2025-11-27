@@ -1,0 +1,235 @@
+/* Contenedor principal */
+.clima-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #2f4f2f;
+  background: linear-gradient(to bottom, #eaf7ea, #d6f0d6);
+  min-height: 100vh;
+
+  /* Imagen de fondo bosque */
+  background-image: url("https://th.bing.com/th/id/R.b912aa4774f3aeba7f64b95bb1f01e34?rik=xUQjxOInxzj%2fpA&pid=ImgRaw&r=0");
+  background-repeat: no-repeat;       /* ✅ no se repite */
+  background-size: cover;             /* ✅ se adapta al tamaño */
+  background-position: center center; /* ✅ centrada */
+}
+
+
+/* Encabezado */
+.clima-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+  color: #1b3b1b;
+  text-shadow: 1px 1px 2px #887e43;
+}
+
+.clima-subtitle {
+  color: #355e35;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+/* Navegación de tabs */
+.clima-tabs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+  justify-content: center;
+}
+
+.clima-tab {
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #504d20;
+  background: #569e2e;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.clima-tab:hover {
+  background: #93e293;
+  transform: scale(1.05);
+}
+
+.clima-tab.active {
+  background: #e6e6b8;
+  border-color: #6fa86f;
+  font-weight: bold;
+  color: #1b3b1b;
+}
+
+/* Contenido principal */
+.clima-content {
+  margin-top: 1rem;
+}
+
+.clima-content section {
+  background: rgba(186, 241, 97, 0.707);
+  border: 1px solid #cfe3cf;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Listas */
+.clima-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.clima-list li {
+  margin: 0.35rem 0;
+  line-height: 1.5;
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.clima-list li::before {
+  content: "🌱";
+  position: absolute;
+  left: 0;
+}
+
+/* Quizz */
+.quizz-card {
+  border: 1px solid #cfe3cf;
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  background: #f9fff9;
+}
+
+.quizz-text {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #1b3b1b;
+}
+
+.quizz-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.5rem;
+}
+
+.quizz-option {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #95c995;
+  background: #f7fff7;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.quizz-option:hover {
+  background: #e4fbe4;
+  transform: scale(1.05);
+}
+
+.quizz-option.selected {
+  background: #b8e6b8;
+  border-color: #6fa86f;
+  font-weight: bold;
+}
+
+.quizz-submit {
+  margin-top: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  background: #2f7d32;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.quizz-submit:hover {
+  background: #256a28;
+}
+
+.quizz-result {
+  margin-top: 0.75rem;
+  font-weight: 600;
+  color: #1b3b1b;
+}
+
+/* Recursos */
+.clima-links {
+  list-style: none;
+  padding-left: 0;
+}
+
+.clima-links li {
+  margin: 0.5rem 0;
+}
+
+.clima-links span {
+  display: inline-block;
+  padding: 0.4rem 0.6rem;
+  background: #4c9f4c;
+  border-radius: 6px;
+  border: 1px solid #cde3cd;
+  color: #355e35;
+  font-weight: 500;
+}
+
+/* 🌐 Responsividad */
+@media (max-width: 1024px) {
+  .clima-header h1 {
+    font-size: 1.8rem;
+  }
+  .clima-tabs {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .clima-container {
+    padding: 0.75rem;
+  }
+  .clima-header h1 {
+    font-size: 1.6rem;
+  }
+  .clima-content section {
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .clima-header h1 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  .clima-subtitle {
+    text-align: center;
+  }
+  .clima-tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .clima-tab {
+    width: 100%;
+    text-align: center;
+  }
+  .quizz-options {
+    grid-template-columns: 1fr;
+  }
+}
+.clima-back {
+  margin: 0.5rem 0 1rem 0;
+}
+
+.back-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #6fa86f;
+  background: #b8e6b8;
+  color: #1b3b1b;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.back-btn:hover {
+  background: #95c995;
+}

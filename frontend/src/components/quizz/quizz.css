@@ -1,0 +1,112 @@
+.quizz-panel {
+  background: linear-gradient(to bottom, #e8f5e9, #c5e1a5);
+  height: 100vh;
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #2e4d3a;
+  box-sizing: border-box;
+  overflow-y: auto;
+  animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.preguntas-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.pregunta-card {
+  background-color: #f1f8e9;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.pregunta-card h4 {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.opciones {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.opcion {
+  background-color: #dcedc8;
+  padding: 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.opcion:hover {
+  background-color: #c5e1a5;
+}
+
+.opcion.seleccionada {
+  background-color: #aed581;
+  font-weight: bold;
+}
+
+.finalizar-btn {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.finalizar-btn:hover {
+  background-color: #388e3c;
+}
+
+.resultados {
+  text-align: center;
+  margin-top: 2rem;
+  background-color: #f1f8e9;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* 📱 Responsivo */
+@media (max-width: 600px) {
+  .quizz-panel {
+    padding: 1rem;
+  }
+
+  .pregunta-card h4 {
+    font-size: 1rem;
+  }
+
+  .finalizar-btn {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+}
+@media (max-width: 1024px) {
+  .quizz-panel {
+    padding: 1.5rem;
+  }
+  .pregunta-card h4 {
+    font-size: 1.05rem;
+  }
+  .finalizar-btn {
+    font-size: 0.95rem;
+    padding: 0.9rem;
+  }
+}
+.pregunta-card h4 {
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+}

@@ -1,0 +1,118 @@
+/* 🌄 Fondo general */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 1s ease-in-out;
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+/* 🌿 Contenedor de login/registro */
+.container,
+#user-panel,
+.saludo-panel,
+.admin-panel,
+.explorador-panel {
+  width: 90%;
+  max-width: 400px;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  animation: fadeIn 0.5s ease;
+  box-sizing: border-box;
+   background-color: rgba(19, 20, 19, 0.367); /* Verde con transparencia */
+  backdrop-filter: blur(6px); /* Opcional: desenfoque del fondo */
+}
+
+/* 📱 Responsivo: celulares pequeños */
+@media (max-width: 600px) {
+  .container,
+  #user-panel,
+  .saludo-panel {
+    padding: 1rem;
+    width: 95%;
+  }
+
+  input, button {
+    font-size: 0.9rem;
+  }
+
+  .botones-saludo {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .preguntas-panel {
+    max-height: 50vh;
+    padding: 1rem;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* 📲 Responsivo: tablets */
+@media (max-width: 1024px) {
+  .admin-panel {
+    padding: 1.5rem;
+    grid-template-rows: auto auto 1fr;
+    max-width: 95%;
+  }
+
+  .usuario-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .usuario-card input,
+  .usuario-card select,
+  .usuario-card button {
+    width: 100%;
+  }
+
+  .preguntas-panel {
+    max-height: 55vh;
+    padding: 1rem;
+  }
+
+  .explorador-panel {
+    max-width: 95%;
+    padding: 1.5rem;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* 💻 PC: mantiene diseño amplio */
+@media (min-width: 1025px) {
+  .admin-panel {
+    max-width: 1100px;
+  }
+
+  .explorador-panel {
+    max-width: 900px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+/* 🎬 Animación */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}

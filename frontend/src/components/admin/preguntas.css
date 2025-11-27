@@ -1,0 +1,145 @@
+.preguntas-panel {
+  background: linear-gradient(to bottom, #e0f2e9, #c8e6c9);
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #2e4d3a;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formulario-pregunta {
+  background-color: #457c05;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formulario-pregunta input,
+.formulario-pregunta select {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.formulario-pregunta button {
+  padding: 0.8rem;
+  background-color: #4caf50;
+  color: black;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formulario-pregunta button:hover {
+  background-color: #388e3c;
+}
+
+.preguntas-listado {
+  max-height: 400px;
+  overflow-y: auto;
+  width: 100%;
+  max-width: 500px;
+  padding-right: 0.5rem;
+}
+
+.preguntas-listado ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.preguntas-listado li {
+  background-color: #be6b0b;
+  padding: 0.8rem;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.opciones-lista {
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+}
+
+.opciones-lista li {
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+}
+
+.opciones-lista .correcta {
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+.acciones {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.acciones button {
+  background-color: #81c784;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.acciones button:hover {
+  background-color: #66bb6a;
+}
+
+.acciones button:last-child {
+  background-color: #f44336;
+}
+
+.acciones button:last-child:hover {
+  background-color: #d32f2f;
+}
+
+/* 📱 Responsivo */
+@media (max-width: 600px) {
+  .formulario-pregunta {
+    padding: 1rem;
+  }
+
+  .preguntas-listado {
+    max-height: 300px;
+  }
+}
+@media (max-width: 1024px) {
+  .preguntas-panel {
+    padding: 1.5rem;
+  }
+  .formulario-pregunta {
+    max-width: 90%;
+  }
+  .preguntas-listado {
+    max-height: 350px;
+  }
+}
+.formulario-pregunta input,
+.formulario-pregunta select {
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
+@media (max-width: 480px) {
+  .preguntas-listado {
+    max-height: 250px;
+  }
+}

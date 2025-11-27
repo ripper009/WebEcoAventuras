@@ -1,0 +1,89 @@
+.resultados-panel {
+  background: linear-gradient(to bottom, #e0f2f1, #11b917a9);
+  height: 100vh; /* ✅ altura fija para scroll */
+  overflow-y: auto; /* ✅ activa scroll vertical */
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #2e4d3a;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ✅ Título centrado y con espacio */
+.resultados-panel h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+}
+
+/* ✅ Lista centrada y responsiva */
+.resultados-panel ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* ✅ Tarjetas de resultado */
+.resultados-panel li {
+  background-color: #f1f8e9;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  font-size: 1rem;
+}
+
+/* ✅ Botón de navegación */
+.resultados-panel .volver-btn {
+  margin-top: 2rem;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.resultados-panel .volver-btn:hover {
+  background-color: #388e3c;
+}
+
+/* 📱 Responsivo */
+@media (max-width: 600px) {
+  .resultados-panel {
+    padding: 1rem;
+  }
+
+  .resultados-panel li {
+    font-size: 0.95rem;
+  }
+
+  .resultados-panel h2 {
+    font-size: 1.4rem;
+  }
+
+  .resultados-panel .volver-btn {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 1024px) {
+  .resultados-panel {
+    padding: 1.5rem;
+  }
+  .resultados-panel h2 {
+    font-size: 1.5rem;
+  }
+  .resultados-panel li {
+    font-size: 0.98rem;
+  }
+}
+.resultados-panel h2 {
+  font-size: clamp(1.4rem, 3vw, 1.6rem);
+}
