@@ -1,28 +1,34 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "./tutoriales.css"; // estilos personalizados
+import "./tutoriales.css";
+
+// ✅ Ruta corregida según jerarquía
+const videosImportados = import.meta.glob("../../assets/videos/*.mp4", { eager: true });
 
 export default function Tutoriales() {
   const [videoSeleccionado, setVideoSeleccionado] = useState(null);
+  const [videos, setVideos] = useState([]);
   const navigate = useNavigate();
 
-  const videos = [
-    {
-      id: 1,
-      titulo: "Explora EcoAventuras",
-      url: "https://www.youtube.com/embed/D2mlhUJScik", // ✅ corregido
-    },
-    {
-      id: 2,
-      titulo: "Explora el Lobby",
-      url: "https://www.youtube.com/embed/7oCo8TXW5Gs",
-    },
-    /*{
-      id: 3,
-      titulo: "Energías renovables en la naturaleza",
-      url: "https://www.youtube.com/embed/VIDEO_ID3",
-    },*/
-  ];
+  useEffect(() => {
+    const listaVideos = Object.entries(videosImportados)
+      .filter(([_, modulo]) => modulo?.default)
+      .map(([ruta, modulo], index) => {
+        const nombreArchivo = ruta.split("/").pop().replace(".mp4", "");
+        const tituloFormateado = nombreArchivo
+          .replace(/([A-Z])/g, " $1")
+          .replace(/_/g, " ")
+          .replace(/\b\w/g, (c) => c.toUpperCase());
+
+        return {
+          id: index + 1,
+          titulo: tituloFormateado,
+          url: modulo.default,
+        };
+      });
+
+    setVideos(listaVideos);
+  }, []);
 
   return (
     <div className="tutoriales-container">
@@ -52,14 +58,12 @@ export default function Tutoriales() {
                 <h3 className="titulo-video">TUTORIALES</h3>
               </div>
               <div className="pantalla-video">
-                <iframe
-                  src={videoSeleccionado}
-                  title="Video tutorial"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
+  <video key={videoSeleccionado} controls width="100%">
+    <source src={videoSeleccionado} type="video/mp4" />
+    Tu navegador no soporta el video.
+  </video>
+</div>
+
             </div>
           </div>
         )}
